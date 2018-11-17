@@ -1,0 +1,22 @@
+{% extends 'pmanager/base.html' %}
+{% block title %}المبادرات{% endblock %}
+{% block body %}
+
+    <div class="container">
+            <h3 class="text-center" style="margin-top: 2%">
+                التحديات
+            </h3>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <ul class="list-group">
+                    {% for challenge in challenges %}
+                         <li class="list-group-item">{{ forloop.counter }}- {{ challenge.challenge }}</li>
+                    {% empty %}
+                        لا توجد بيانات
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

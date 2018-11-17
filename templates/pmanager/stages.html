@@ -1,0 +1,41 @@
+{% extends 'pmanager/base.html' %}
+{% block title %}المبادرات{% endblock %}
+{% block body %}
+
+    <div class="container">
+            <h3 class="text-center" style="margin-top: 2%">
+                مراحل المشروع
+            </h3>
+        <br>
+        <div class="row">
+            <div class="col-12">
+
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">المرحلة</th>
+                  <th scope="col">الوزن</th>
+                  <th scope="col">تاريخ الإنتهاء</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for stage in stages %}
+                     <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ stage.stage }}</td>
+                        <td>{{ stage.ratio }}%</td>
+                        <td>{{ stage.end_date }}</td>
+                     </tr>
+                {% empty %}
+                        لا توجد بيانات
+                {% endfor %}
+              </tbody>
+            </table>
+
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}
